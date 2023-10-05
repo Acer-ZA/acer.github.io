@@ -1,0 +1,22 @@
+Developer Assessment
+Create a responsive sing-page web application that allows a user to view a list of items and filter them based on categories
+
+
+Requirements
+1. HTML
+	- Use semantic HTML elements
+	- Inlcide a header with a website title
+	- Include a main section to display a list of items
+	- Use an appropriate HTML element for filtering the items based on categories
+2. CSS
+	- Implement a mobile-first approach. Design for mobile screens and then scale up using media queries
+	- Use CSS Grid to align and distribute the items evenly in rows.
+3. Javascript
+	- Populate the list of items usng JavaScript. For simplicity, this list can be an array of objects.
+	  Each object should contain a name, description, and category. 
+	- Implement functionality to filter the list of items based on the selected ategory.
+	- This list should update in real-time as a category is selected.
+4. Bonus
+	- Implement a ligt/dark mode to toggle for the website.
+	- Use CSS variable to aid theming
+	- Use localStorage to remember the user's theme preference

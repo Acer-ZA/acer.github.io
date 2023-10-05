@@ -1,0 +1,74 @@
+<!-- 
+***************************************
+    Input Character Assessment Demo
+    by Theo du Plooy
+    081 415 6287 | tdpcorp@gmail.com
+*************************************** 
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Input Char Demo - by Theo du Plooy</title>
+        <link rel="stylesheet" href="css/core.css" />
+        <script src="js/jquery-3.6.3.min.js"></script>
+        <script src="js/core.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="main-layout-holder">
+            <div class="feedback-box">
+                <fieldset>
+                    <legend>Console feedback</legend>
+                    <div class="output"></div>
+                </fieldset>
+            </div>
+            <div class="intro-instructions-holder">
+                <h1>Input Character Demo</h1>
+                <fieldset>
+                    <legend>Please give your feedback below</legend>
+                    <ul>
+                        <li>
+                            Click new line if you need more space
+                        </li>
+                        <li>
+                            Click X to remove the current line
+                        </li>
+                        <li>
+                            Your review must be at least 50 characters, but no more than 1000 characters 
+                        </li>
+                    </ul>
+                </fieldset>
+            </div>
+            <fieldset class="input-holder-fieldset">
+                <legend>Please enter your input</legend>
+                <div class="input-holders">
+                    <div class="row init">
+                        <span class="init"></span>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="newline-row">
+                <div class="newline-div">
+                    <span class="newline">New Line + </span>
+                </div>
+            </div>
+            <div class="textarea-output-holder">
+                <fieldset>
+                    <legend>Output result</legend>
+                    <textarea class="textarea-output" disabled="disabled" placeholder="Your input output will be displayed here"></textarea>
+                </fieldset>
+            </div>
+            <div class="presentation-footer">
+               <div class="presentation-footer-content">
+                Input Character Assessment Demo 
+                <br/>
+                by Theo du Plooy
+                <br/>
+                081 415 6287 | <a href="mailto:tdpcorp@gmail.com">tdpcorp@gmail.com</a>
+               </div>
+            </div>
+        </div>
+        <div class="alert-overlay"></div>
+    </body>
+</html>
