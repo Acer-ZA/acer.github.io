@@ -1,0 +1,66 @@
+<!-- 
+***********************************************************
+    List of Items Viewer | Technical Assessment
+    by Theo du Plooy
+    081 415 6287 | tdpcorp@gmail.com
+***********************************************************
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Assessment: List of Items Viewer | Theo du Plooy</title>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap" as="style">
+    <link rel="stylesheet" href="css/core-css.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap">
+    <link rel="preload" href="js/core-js.js" as="script">
+    <link rel="preload" href="images/company-logo-dark.svg" as="image">
+    <link rel="preload" href="images/company-logo-light.svg" as="image">
+    <link rel="preload" href="images/settings-black.svg" as="image">
+    <link rel="preload" href="images/settings-white.svg" as="image">
+    <link rel="stylesheet" href="css/core-css.css?v-1439">
+</head>
+<body>
+    <header>
+        <section class="logo-row">
+            <a href="#" target="_blank" class="logo" title="Visit the Company"></a>
+            <h1 class="title">List of Items Viewer</h1>
+            <div class="settings-icon"></div>
+        </section>
+        <section class="filters">
+            <div class="empty"></div>
+            <div class="filters-actual">
+                <label for="category">Filter by Category:</label>
+                <select id="category">
+                    <option value="all">All</option>
+                </select>
+            </div>
+            <div class="empty"></div>
+        </section>
+    </header>
+    <main>
+        <section class="items">
+            <!-- /// Items will be dynamically populated here /// -->
+        </section>
+    </main>
+    <footer>
+        <section class="footer-content">
+            Technical Assessment
+            <br/>
+            by Theo du Plooy
+            <br/>
+            <a href="tel:+27814156287">081 415 6287</a> - <a href="mailto:tdpcorp@gmail.com">tdpcorp@gmail.com</a>
+        </section>
+    </footer>
+    <section class="settings-container">
+        <span class="settings-title">Theme Settings</span>
+        <div class="theme-selector">
+            <div class="circle white" id="lightTheme" title="Select the Light Theme"></div>
+            <div class="circle grey" id="darkTheme" title="Select the Dark Theme"></div>
+        </div>
+    </section>
+    <script src="js/core-js.js"></script>
+</body>
+</html>

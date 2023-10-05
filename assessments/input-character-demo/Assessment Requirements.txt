@@ -1,0 +1,21 @@
+Write a simple input screen in HTML and JQUERY (no need to use controller methods).
+ 
+Functionality
+ 
+•	Each text box must hold only 40 characters.
+•	As the user types if the user goes over 40 it should automatically create a new textbox below the current and 
+	continue input.
+•	Each alternate textbox should have a light grey background.
+•	Clicking New Line should add a new blank textbox below the current textboxes.
+•	No more input is allowed when 1000 characters are reached.
+•	Clicking X will remove the current textbox, if there’s text prompt the user to confirm.
+•	As the user types, add the complete text into the textbox at the bottom
+ 
+Optional: If you’re good.
+ 
+•	If the complete text doesn’t fit the bottom textbox, shrink the font size to make it fit.
+ 
+Optional: If you’re really good
+ 
+•	Apply responsive design for an iPhone screen (you just need to cater for one size).
+ 
