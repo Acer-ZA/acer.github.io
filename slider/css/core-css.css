@@ -1,0 +1,485 @@
+/* 
+**********************************************************
+   Huble MonolithAI Slider Replication
+   by Theo du Plooy
+   081 415 6287 | tdpcorp@gmail.com
+***********************************************************
+ */
+
+ /* /// Section: Fonts /// */
+@font-face {
+    font-family: 'CircularStd';
+    src: url('fonts/CircularStd-Book.eot');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'CircularStd';
+    src: url('fonts/CircularStd-Black.eot');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'CircularStd';
+    src: url('fonts/CircularStd-Bold.eot');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'CircularStd';
+    src: url('fonts/CircularStd-Medium.eot');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap
+}
+
+/* /// Section: Variables /// */
+:root {
+    --default-font: 'CircularStd', sans-serif;
+    --font-size-default: 16px;
+    --font-size-small: 13px;
+    --pink: #ff5a5f;
+    --pink-dark: #cc4d59;
+    --white: #fff;
+    --black: #000;
+}
+
+/* /// Section: Animations // */
+@keyframes rotateIn {
+    0% {
+        opacity: 0;
+        transform: rotateY(-90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes itemIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInFadeHorizontal {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFadeHorizontalWithBlur {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    20% {
+        filter: blur(12px);
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur(0px);
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFadeVertical {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomInSml {
+    0% {
+        background-size: cover;
+    }
+    
+    50% {
+        background-position: right center;
+    }
+
+    100% {
+        background-position: right top;
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        background-size: 100%;
+    }
+    
+    50% {
+        background-size: 200%;
+        background-position: right center;
+    }
+
+    100% {
+        background-size: 400%;
+        background-position: right -200px;
+    }
+}
+
+@keyframes opacityIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* /// Section: General /// */
+html,
+body {
+    height: 100% !important;
+}
+
+body {
+    display: grid;  
+    grid-template-rows: 110px max-content 1fr;
+    grid-template-columns: 100%;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    font-family: var(--default-font);
+    font-size: var(--font-size-default);
+}
+
+header {
+    display: inline-flex;
+    align-items: center;
+}
+
+main {
+    display: inline-flex;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.logo-row {
+    width: 100%;
+}
+
+.monolith-logo {
+    transform: rotateY(-90deg);
+    margin-left: 18%;
+    display: inline-block;
+    width: 250px;
+    height: 34px;
+    background-image: url('../img/monolith-logo.svg');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none !important;
+    animation-name: rotateIn;
+    animation-delay: 190ms;
+    animation-duration: 1550ms;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.container {
+    display: inline-flex;
+    width: 100%;
+    max-width: 1140px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* /// Section: Hero /// */
+.hero-section {
+    width: 100%;
+    background-image: url('../img/monolith-hero-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: zoomIn;
+    animation-delay: 0ms;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-duration: 120s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+.hero-bg-screen {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-section .container {
+    display: inline-grid;
+    grid-template-columns: 100%;
+    grid-template-rows: min-content min-content;
+    justify-content: center;
+    padding-top: 120px; 
+    padding-bottom: 80px;
+}
+
+.hero-section .hero-text-container {
+    display: inline-grid;
+    grid-template-columns: 57%;
+    grid-template-rows: min-content min-content;
+    grid-row-gap: 10px;
+    overflow: hidden;
+}
+
+.hero-section h3 {
+    opacity: 0;
+    margin: 0px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--pink);
+    animation: opacityIn;
+    animation-delay: 200ms;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1200ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.hero-section h1 {
+    opacity: 0;
+    transform: translateZ(-100%);
+    margin: 0px;
+    font-size: 54px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: .25px;
+    color: var(--white);
+    animation: slideInFadeHorizontal;
+    animation-delay: 1200ms;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1200ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.hero-section p {
+    opacity: 0;
+    transform: translateZ(-100%);
+    margin: 0px;
+    margin-bottom: 54px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0px;
+    color: var(--white);
+    animation: slideInFadeVertical;
+    animation-delay: 2000ms;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1800ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.hero-section .hero-button-container {
+    opacity: 0;
+    display: inline-grid;
+    grid-template-columns: max-content max-content;
+    column-gap: 30px;
+    margin-bottom: 80px;
+    width: 57%;
+    animation: opacityIn;
+    animation-delay: 2800ms;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1200ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.hero-section .hero-button-container a {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: auto;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    color: var(--white);
+    border: 3px solid var(--pink);
+    border-radius: 30px;
+    transition: all 350ms ease-in-out;
+}
+
+.hero-section .hero-button-container a:first-of-type {
+    background-color: var(--pink);
+    border: 3px solid var(--pink);
+}
+
+.hero-section .hero-button-container a:first-of-type:hover {
+    background-color: var(--pink-dark);
+    border: 3px solid var(--pink-dark);
+}
+
+.hero-section .hero-button-container a:last-of-type {
+    background-color: transparent;
+}
+
+.hero-section .hero-button-container a:last-of-type:hover {
+    background-color: var(--pink);
+    color: var(--black);
+}
+
+/* /// Section: Slider /// */
+.slider {
+    width: 100%;
+    height: 100px;  
+    overflow: hidden;
+}
+
+.slick-list.draggable {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    animation: slideInFadeHorizontal;
+    animation-delay: 3500ms;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1300ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.slick-track {
+    display: inline-flex!important;
+    align-items: center!important;
+    height: 100%!important;
+}
+
+.logo-slide {
+    display: flex!important;
+    height: 100%!important;
+    justify-content: center!important;
+    align-items: center!important;
+    min-height: 35px!important;
+    height: inherit!important;
+}
+
+.logo-link {
+    display: inline-flex;
+    align-items: center;
+    max-width: 70%;
+    height: 100%;
+}
+
+.logo-link img {
+    width: 100%!important;
+    max-width: 100%!important;
+    height: auto!important;
+    transition: opacity 250ms ease-in-out;
+}
+
+.logo-link:hover img {
+    opacity: 0.5;
+}
+
+.footer-content {
+    align-self: center;
+    font-size: var(--font-size-small);
+    font-weight: 400;
+    line-height: 1.3!important;
+    color: var(--black);
+}
+
+.footer-content a {
+    text-decoration: none !important;
+    font-weight: 300;
+    color: var(--black);
+}
+
+.footer-content a:hover {
+    text-decoration: underline !important;
+}
+
+
+/* /// Section: Responsive /// */
+@media (max-width: 600px) {
+    .logo-row {
+        display: inline-flex;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .monolith-logo {
+        margin-left: unset;
+    }
+    .hero-section .hero-text-container {
+        display: inline-grid;
+        grid-template-columns: 100%;
+        width: 100%;
+    }
+
+    .hero-section .hero-button-container {
+        grid-template-columns: 100%;
+        grid-row-gap: 20px;
+        column-gap: unset;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (max-width: 1250px) {
+    .hero-section {
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        animation: zoomInSml;
+        animation-delay: 100ms;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+        animation-duration: 120s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+    }
+}

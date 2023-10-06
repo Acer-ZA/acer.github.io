@@ -1,0 +1,455 @@
+/* 
+**********************************************************
+   Huble SnapDocs Accordion Replication
+   by Theo du Plooy
+   081 415 6287 | tdpcorp@gmail.com
+***********************************************************
+ */
+
+/* /// Section: Fonts /// */
+@font-face {
+    font-display: swap;
+    font-family: Gilroy-bold;
+    src: url('fonts/Gilroy-Bold.ttf') format("woff")
+}
+
+/* /// Section: Variables /// */
+:root {
+    --default-font: 'Open Sans', sans-serif;
+    --font-size-default: 16px;
+    --font-size-small: 13px;
+    --blueish: #1a2538;
+    --blue-lighter: #3A86FF;
+    --white: #fff;
+    --white-opacity: background: rgba(252, 253, 255, 1.0);
+    --black: #000;
+    --silver: #F3F6FA;
+    --orange: #F26B2C;
+    --orange-lighter: #FF8C57;
+}
+
+/* /// Section: Animations // */
+@keyframes rotateIn {
+    0% {
+        opacity: 0;
+        transform: rotateY(-90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes itemIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes slideInFadeVertical {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes opacityIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes backgroundSlideIn {
+    0% {
+        background-position: center bottom 200%;
+    }
+
+    100% {
+        background-position: center top;
+    }
+}
+
+/* /// Section: General /// */
+html,
+body {
+    height: 100% !important;
+}
+
+body {
+    display: grid;  
+    grid-template-rows: 100px 1fr auto;
+    grid-template-columns: 100%;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    font-family: var(--default-font);
+    font-size: var(--font-size-default);
+    color: var(--blueish);
+}
+
+header {
+    display: inline-flex;
+    align-items: center;
+}
+
+main {
+    display: inline-flex;
+    justify-content: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.logo-row {
+    width: 100%;
+}
+
+.snapdocs-logo {
+    opacity: 0;
+    margin-left: 18%;
+    display: inline-block;
+    width: 250px;
+    height: 34px;
+    background-image: url('../img/snapdocs-logo.svg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none !important;
+    animation-name: opacityIn;
+    animation-delay: 190ms;
+    animation-duration: 1550ms;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.container {
+    display: inline-flex;
+    width: 100%;
+    max-width: 1140px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* /// Section: Accordion /// */
+.accordion-outer-section {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px;
+    background-color: var(--silver);
+}
+
+.accordion-inner-container {
+    display: inline-grid;
+    grid-template-columns: 100%;
+    grid-row-gap: 50px;
+    justify-content: center;
+    max-width: 1170px;
+    background-color: var(--white);
+    border-radius: 16px;
+    padding: 80px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.accordion-intro-container {
+    width: 100%;
+}
+
+.accordion-intro-container {
+    text-align: center;
+}
+
+.accordion-intro-container h1 {
+    opacity: 0;
+    margin: 0px;
+    font-family: Gilroy-bold;
+    font-size: 33px;
+    font-weight: 500;
+    color: var(--blueish);
+    animation: slideInFadeVertical;
+    animation-delay: 200ms;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1200ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.accordion-intro-container p {
+    opacity: 0;
+    margin: 0px!important;
+    margin-top: 5px!important;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    animation: opacityIn;
+    animation-delay: 800ms;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1800ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.accordion-area-container {
+    display: inline-grid;
+    grid-template-columns: 0.6fr auto;;
+    grid-column-gap: 20px;
+}
+
+.acc-control {
+    display: inline-grid;
+    grid-template-columns: auto 15px;
+    padding-left: 0px!important;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    border: none;
+    outline: none!important;
+    background: transparent;
+    cursor: pointer;
+}
+
+.acc-control span {
+    justify-self: left;
+    align-self: center;
+    font-family: Gilroy-bold;
+    font-size: 23px;
+    transition: all 150ms ease-in-out;
+}
+
+.accordion-section:hover .acc-control span {
+    color: var(--orange);
+}
+
+.acc-arrow {
+    align-self: center;
+    width: 15px;
+    height: 15px;
+    background-image: url('../img/acc-arrow-down.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 250ms ease-in-out;
+}
+
+.acc-control:hover .acc-arrow {
+    background-image: url('../img/acc-arrow-down-orange.svg');
+}
+
+.open .acc-arrow {
+    background-image: url('../img/acc-arrow-up-orange.svg')!important;
+}
+
+#accordion .acc-content-outer {
+    border-bottom: 1px solid var(--black);
+    transition: all 150ms ease-in-out;
+}
+
+.accordion-section:hover .acc-content-outer {
+    border-bottom: 1px solid var(--orange)!important;
+}
+
+#accordion article {
+    padding-bottom: 20px;
+}
+
+#accordion article p {
+    padding-bottom: 20px;
+    font-family: 'Open Sans';
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.acc-readmore {
+    display: inline-grid;
+    grid-template-columns: auto 25px;
+    color: var(--blueish);
+    font-family: 'Gilroy-bold';
+    font-size: 18px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.acc-readmore:hover {
+    color: var(--orange);
+}
+
+.acc-readmore span {
+    display: inline-flex;
+    margin-left: 15px;
+    width: 30px;
+    height: 30px;
+    background: url('../img/learn-more.png');
+    background-size: cover;
+    image-rendering: pixelated;
+}
+
+.acc-button-holder {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 20px;
+}
+
+.acc-button-holder a {
+    padding: 14px 16px;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: all 250ms ease-in-out;
+    background-color: transparent;
+    font-family: 'Gilroy-bold';
+    font-size: 16px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.acc-button-holder a:first-of-type {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.acc-button-holder a:first-of-type:hover {
+    background-color: var(--orange-lighter);
+    
+}
+
+.acc-button-holder a:last-of-type {
+    border: 2px solid var(--blueish);
+    color: var(--blueish);
+}
+
+.acc-button-holder a:last-of-type:hover {
+    background-color: var(--blue-lighter);
+    color: var(--white);
+}
+
+/* /// Accordion Images /// */
+.accordion-img-container {
+    display: flex;
+    overflow: hidden;
+}
+
+.accordion-img-actual {
+    opacity: 0;
+    transform: translateY(60%);
+    width: 100%;
+    max-width: 492px;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 250ms ease-in-out;
+}
+
+.accordion-img-actual.acc-img-animate {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+[acc-img="img-lender"] {
+    background-image: url('../img/lender.webp');
+}
+
+[acc-img="img-title"] {
+    background-image: url('../img/title.png');
+}
+
+[acc-img="img-signing"] {
+    background-image: url('../img/signing.webp');
+}
+
+[acc-img="img-notary"] {
+    background-image: url('../img/notary.png');
+}
+
+.footer-content {
+    align-self: center;
+    font-size: var(--font-size-small);
+    font-weight: 400;
+    line-height: 1.3!important;
+    color: var(--black);
+}
+
+.footer-content a {
+    text-decoration: none !important;
+    font-weight: 300;
+    color: var(--black);
+}
+
+.footer-content a:hover {
+    text-decoration: underline !important;
+}
+
+
+/* /// Section: Responsive /// */
+@media (max-width: 600px) {
+    .accordion-area-container {
+        grid-template-columns: 100%;
+    }
+
+    .accordion-img-container {
+        height: 250px;
+    }
+}
+
+@media (max-width: 800px) {
+    .logo-row {
+        display: inline-flex;
+        justify-content: center;;
+    }
+
+    .snapdocs-logo {
+        margin: 0;
+    }
+
+    .accordion-inner-container {
+        padding: 20px!important;
+    }
+}
+
+@media (min-width: 1000px) {
+    .accordion-img-actual {
+        height: 469px; 
+    }
+}
+
+@media (max-width: 1250px) {
+    .hero-section {
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        animation: zoomInSml;
+        animation-delay: 100ms;
+        animation-direction: alternate;
+        animation-timing-function: ease-in-out;
+        animation-duration: 120s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+    }
+}
