@@ -267,6 +267,17 @@ footer {
     background-image: url('../img/acc-arrow-up-orange.svg')!important;
 }
 
+#accordion {
+    opacity: 0;
+    animation-name: opacityIn;
+    animation-delay: 500ms;
+    animation-duration: 1550ms;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
 #accordion .acc-content-outer {
     border-bottom: 1px solid var(--black);
     transition: all 150ms ease-in-out;
